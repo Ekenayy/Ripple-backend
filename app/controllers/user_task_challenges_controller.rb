@@ -1,0 +1,2 @@
+class UserTaskChallengesController < ApplicationController
+end
