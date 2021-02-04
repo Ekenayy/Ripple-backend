@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_032414) do
     t.string "description"
     t.string "video_url"
     t.string "photo_url"
+    t.string "genre"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_032414) do
     t.string "name"
     t.string "email"
     t.string "bio"
+    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
