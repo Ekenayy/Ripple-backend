@@ -5,5 +5,11 @@ class ChallengesController < ApplicationController
         
         render json: challenges
     end 
+
+    def show
+        challenge = Challenge.all.find_by(id: params[:id])
+
+        render json: challenge
+    end 
     
 end

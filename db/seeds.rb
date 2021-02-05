@@ -22,7 +22,7 @@ TaskChallenge.destroy_all
 User.create(
     name: "Lhamo Thondup",
     email: "thelama@gmail.com", 
-    bio: "Give the ones you loe wings to fly, roots to come back, and reasons to stay",
+    bio: "Give the ones you love wings to fly, roots to come back, and reasons to stay",
     picture: "https://api.time.com/wp-content/uploads/2014/02/dalai_lama_0041tpk_s.jpg?w=600&quality=85"
 )
 
