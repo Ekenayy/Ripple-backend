@@ -1,4 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :bio, :challenge_names
+  attributes :id, :name, :email, :bio, :challenge_ids
 
 end
