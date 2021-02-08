@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :tasks
   resources :user_challenges
   resources :challenges
-  resources :users
 
   get '/fake', to: 'users#fake'
+  get '/users/:id', to: 'users#show'
+  post '/my_user_challenges', to: 'user_challenges#my_user_challenges'
   # post '/login', to: 'users#login'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

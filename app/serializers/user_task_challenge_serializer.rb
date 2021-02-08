@@ -1,4 +1,4 @@
 class UserTaskChallengeSerializer < ActiveModel::Serializer
-  attributes :id, :completed
-  has_one :user_challenge
+  attributes :id, :completed, :description
+  # has_one :user_challenge
 end

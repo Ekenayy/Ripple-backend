@@ -11,6 +11,19 @@ class UserTaskChallengesController < ApplicationController
         
     end
 
+    def update
+        user_task_challenge = UserTaskChallenge.find_by(id: params[:id])
+
+        if user_task_challenge
+            user_task_challenge.update(utc_params)
+            
+            render json: user_task_challenge
+        else 
+            render json: {errors: user_task_challenge.errors.full_messages }
+        end 
+
+    end 
+
     private
 
     def utc_params

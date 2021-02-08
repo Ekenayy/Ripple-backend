@@ -6,8 +6,9 @@ class UsersController < ApplicationController
         render json: user
     end 
 
+
     def fake 
-        user = User.last
+        user = User.all.last
         
         render json: user 
     end 
