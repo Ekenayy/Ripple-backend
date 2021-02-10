@@ -24,6 +24,19 @@ class ChallengesController < ApplicationController
     end 
 
 
+    def created_challenges
+
+        challenge = Challenge.all.where(user_id: (params[:user_id]))
+
+        if challenge
+            render json: challenge
+        else 
+            render json: {errors: challenge.errors.full_messages }
+        end 
+        
+    end 
+
+
     private
 
         def challenge_params

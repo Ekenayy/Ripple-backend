@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   post '/login', to: 'users#login'
   post 'users/create', to: 'users#create'
+  post '/created_challenges', to: 'challenges#created_challenges'
   post '/my_user_challenges', to: 'user_challenges#my_user_challenges'
   # post '/login', to: 'users#login'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

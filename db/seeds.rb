@@ -69,7 +69,6 @@ t10 = Task.create(description: "Recite the Heart Sutra")
 t11 = Task.create(description: "Pick up any trash that you see.")
 t12 = Task.create(description: "Pay for the order of the person behind you in line.")
 
-
 #Making Challenges 
 
 # t.string :name

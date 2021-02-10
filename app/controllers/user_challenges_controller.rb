@@ -23,6 +23,7 @@ class UserChallengesController < ApplicationController
 
     end 
 
+
     def update
 
         user_challenge = UserChallenge.find_by(id: params[:id])
