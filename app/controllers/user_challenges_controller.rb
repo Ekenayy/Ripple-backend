@@ -23,24 +23,51 @@ class UserChallengesController < ApplicationController
 
     end 
 
+    def test_challenges
+
+        user_challenges = UserChallenge.all.where(user_id: (params[:user_id]))
+
+        if user_challenges
+            render json: user_challenges
+        else 
+            render json: {errors: user_challenges.errors.full_messages }
+        end 
+
+    end 
+
 
     def update
 
         user_challenge = UserChallenge.find_by(id: params[:id])
 
-        if user_challenge
+        if user_challenge.valid?
             user_challenge.update(completed: params[:completed])
             
             render json: user_challenge
         else 
             render json: {errors: user_challenge.errors.full_messages }
         end 
+
+    end 
+
+    def destroy
+
+        user_challenge = UserChallenge.find_by(id: params[:id])
+
+        if user_challenge
+            user_challenge.destroy
+
+            render json: {success: "Sucessfully deleted"}
+        else 
+            render json: {errors: 'User challenge not found and thus not deleted' }
+        end 
+
     end 
 
     private
 
-    def uc_params
-        params.permit(:user_id, :challenge_id, :completed)
-    end 
+        def uc_params
+            params.permit(:user_id, :challenge_id, :completed)
+        end 
 
 end

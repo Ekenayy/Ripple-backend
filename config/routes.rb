@@ -7,10 +7,13 @@ Rails.application.routes.draw do
 
   get '/fake', to: 'users#fake'
   get '/users/:id', to: 'users#show'
+  # get 'test_challenges/:user_id', to: 'user_challenges#test_challenges'
+  get '/created_challenges/:user_id', to: 'challenges#created_challenges'
+  get '/my_user_challenges/:user_id', to: 'user_challenges#my_user_challenges'
   post '/login', to: 'users#login'
   post 'users/create', to: 'users#create'
-  post '/created_challenges', to: 'challenges#created_challenges'
-  post '/my_user_challenges', to: 'user_challenges#my_user_challenges'
+  # post '/created_challenges', to: 'challenges#created_challenges'
+  # post '/my_user_challenges', to: 'user_challenges#my_user_challenges'
   # post '/login', to: 'users#login'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
