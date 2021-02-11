@@ -3,7 +3,7 @@ class UserChallengesController < ApplicationController
     def create
         new_user_challenge = UserChallenge.create(uc_params)
 
-        if new_user_challenge
+        if new_user_challenge.valid?
             render json: new_user_challenge
         else 
             render json: {errors: new_user_challenge.errors.full_messages }

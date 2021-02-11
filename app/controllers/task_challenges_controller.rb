@@ -4,7 +4,7 @@ class TaskChallengesController < ApplicationController
 
         task_challenge = TaskChallenge.create(tc_params)
 
-        if task_challenge
+        if task_challenge.valid?
             render json: task_challenge
         else 
             render json: {errors: task_challenge.errors.full_messages }

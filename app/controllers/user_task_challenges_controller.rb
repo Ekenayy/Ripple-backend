@@ -3,7 +3,7 @@ class UserTaskChallengesController < ApplicationController
     def create
         user_task_challenge = UserTaskChallenge.create(utc_params)
 
-        if user_task_challenge
+        if user_task_challenge.valid?
             render json: user_task_challenge
         else 
             render json: {errors: user_task_challenge.errors.full_messages }

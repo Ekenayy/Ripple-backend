@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         user = User.create(user_params)
 
 
-        if user            
+        if user.valid?            
             render json: user
         else 
             render json: {errors: user.errors.full_messages}
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         if user
             render json: user
         else 
-            render json: {errors: user.errors.full_messages}
+            render json: {errors: "The email or password you provided doesn't match our records"}
         end 
         
     end 

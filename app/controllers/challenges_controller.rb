@@ -15,7 +15,7 @@ class ChallengesController < ApplicationController
     def create
         challenge = Challenge.create(challenge_params)
 
-        if challenge
+        if challenge.valid?
             render json: challenge
         else 
             render json: {errors: challenge.errors.full_messages }

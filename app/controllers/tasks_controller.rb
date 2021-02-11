@@ -3,7 +3,7 @@ class TasksController < ApplicationController
     def create
         task = Task.create(task_params)
 
-        if task
+        if task.valid?
             render json: task
         else 
             render json: {errors: task.errors.full_messages }
