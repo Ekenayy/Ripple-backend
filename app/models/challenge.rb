@@ -6,4 +6,10 @@ class Challenge < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :user_challenges, dependent: :destroy
   
+  def my_challenge_takers
+    my_user_challenges = UserChallenge.all.where(challenge_id: self.id)
+    my_user_challenges.all.map {|c| c.user}
+    
+  end 
+
 end
