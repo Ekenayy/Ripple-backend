@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews
   resources :user_task_challenges
   resources :task_challenges
   resources :tasks
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   # get 'test_challenges/:user_id', to: 'user_challenges#test_challenges'
   get '/created_challenges/:user_id', to: 'challenges#created_challenges'
   get '/my_user_challenges/:user_id', to: 'user_challenges#my_user_challenges'
+  get '/challenge_reviews/:challenge_id', to: 'reviews#challenge_reviews'
   post '/login', to: 'users#login'
   post 'users/create', to: 'users#create'
   # post '/created_challenges', to: 'challenges#created_challenges'
