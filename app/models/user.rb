@@ -14,6 +14,7 @@ class User < ApplicationRecord
         self.user_challenges.map do |uc|
           uc.challenge.id
         end 
+        
     end 
 
     def reviewed_challenge_ids
