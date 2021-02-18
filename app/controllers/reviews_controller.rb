@@ -23,6 +23,19 @@ class ReviewsController < ApplicationController
 
     end
 
+    def destroy
+        review = Review.all.find_by(id: params[:id])
+
+        if review
+            review.destroy
+
+            render json: {success: "Sucessfully deleted"}
+        else 
+            render json: {errors: 'Review not found and thus not deleted' }
+        end 
+
+    end 
+
     private
     
     def reivew_params

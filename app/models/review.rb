@@ -1,8 +1,7 @@
 class Review < ApplicationRecord
     belongs_to :user
     belongs_to :challenge
-    validates :rating, length: { in: 1..5 }
-    validates :rating, numericality:  {message: 'This value must be a number'}
+    validates :rating, numericality:  {less_than_or_equal_to: 5}
     validates :rating, presence: true
 
 
