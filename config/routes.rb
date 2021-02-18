@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/fake', to: 'users#fake'
   get '/users/:id', to: 'users#show'
+  patch 'users/:id', to: 'users#update'
   # get 'test_challenges/:user_id', to: 'user_challenges#test_challenges'
   get '/created_challenges/:user_id', to: 'challenges#created_challenges'
   get '/my_user_challenges/:user_id', to: 'user_challenges#my_user_challenges'

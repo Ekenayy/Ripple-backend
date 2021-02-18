@@ -25,6 +25,18 @@ class UsersController < ApplicationController
 
     end 
 
+    def update 
+        user = User.all.find_by(id: params[:id])
+        user.update(user_params)
+
+        if user.valid?            
+            render json: user
+        else 
+            render json: {errors: user.errors.full_messages}
+        end 
+        
+    end 
+
     def login 
         user = User.all.find_by(email: params[:email])
 
