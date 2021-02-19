@@ -37,6 +37,20 @@ class ChallengesController < ApplicationController
     end 
 
 
+    def destroy
+        challenge = Challenge.all.find_by(id: params[:id])
+
+        if challenge
+            challenge.destroy
+
+            render json: {success: "Sucessfully deleted"}
+        else 
+            render json: {errors: 'Review not found and thus not deleted' }
+        end 
+
+    end 
+
+
     private
 
         def challenge_params
