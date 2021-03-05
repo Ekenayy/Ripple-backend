@@ -1,9 +1,17 @@
 class UsersController < ApplicationController
 
     def show 
-        user = User.find_by(id: params[:id])
+        user = AuthorizeRequest.new(request.headers).user
+        
+        if user
+            user.update(avatar: params[:avatar], bio: params[:bio])
+            render json: user
+        else
+            render json: { error: "Unauthorized" }, status: :unauthorized
+        end
+        # user = User.find_by(id: params[:id])
 
-        render json: user
+        # render json: user
     end 
 
 
@@ -50,13 +58,8 @@ class UsersController < ApplicationController
 
     private
 
-    # "name"
-    # t.string "email"
-    # t.string "bio"
-    # t.string "picture"
-
     def user_params
-        params.permit(:name, :email, :picture, :bio)
+        params.permit(:name, :email, :password, :picture, :bio)
     end 
 
 end

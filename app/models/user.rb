@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_secure_password
+    
     has_many :user_challenges, dependent: :destroy
     has_many :challenges
     has_many :likes, dependent: :destroy

@@ -22,6 +22,7 @@ TaskChallenge.destroy_all
 User.create(
     name: "Lhamo Thondup",
     email: "thelama@gmail.com", 
+    password: 'lama',
     bio: "Give the ones you love wings to fly, roots to come back, and reasons to stay",
     picture: "https://api.time.com/wp-content/uploads/2014/02/dalai_lama_0041tpk_s.jpg?w=600&quality=85"
 )
@@ -29,6 +30,7 @@ User.create(
 User.create(
     name: "Sir Desmond Tutu",
     email: "tutu@gmail.com", 
+    password: 'tutu',
     bio: "My humanity is bound up in yours, for we can only be human together.",
     picture: "https://www.churchtimes.co.uk/media/5642040/pa-24900785.jpg?center=0.35810810810810811,0.46187363834422657&mode=crop&width=818&height=500&rnd=131637799000000000"
 )
@@ -36,6 +38,7 @@ User.create(
 User.create(
     name: "Thich Nhat Hanh",
     email: "hanh@gmail.com",
+    password: 'thich',
     bio: "There is no way to happiness - happiness is the way.", 
     picture: "https://www.lionsroar.com/wp-content/uploads/2018/10/tnh-profile-main.jpg"
 )
@@ -43,17 +46,18 @@ User.create(
 User.create(
     name: "Ekene Nkem-Mmekam",
     email: 'ekenayy@gmail.com',
+    password: '123',
     bio: "Ripple baby!",
     picture: "https://miro.medium.com/fit/c/262/262/1*aoZai5bRkjOVB0XST5DrTA.jpeg"
 )
 
-16.times do 
-    user = User.create(
-        name: Faker::Name.name, 
-        email: Faker::Internet.email,
-        picture: Faker::Placeholdit.image(size: '50x50', format: 'jpg'), 
-        bio: Faker::Quote.famous_last_words)
-end 
+# 16.times do 
+#     user = User.create(
+#         name: Faker::Name.name, 
+#         email: Faker::Internet.email,
+#         picture: Faker::Placeholdit.image(size: '50x50', format: 'jpg'), 
+#         bio: Faker::Quote.famous_last_words)
+# end 
 
 #Making tasks
 t1 = Task.create(description: "Hug your grandmother")
