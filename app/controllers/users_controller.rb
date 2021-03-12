@@ -1,18 +1,30 @@
 class UsersController < ApplicationController
+    before_action :authenticate, only: [:test_show]
 
-    def show 
-        user = AuthorizeRequest.new(request.headers).user
+    def test_show 
+
+        @current_user.update(email: params[:email], bio: params[:bio])
+        render json: @current_user
+
+        # user = AuthorizeRequest.new(request.headers).user
         
-        if user
-            user.update(avatar: params[:avatar], bio: params[:bio])
-            render json: user
-        else
-            render json: { error: "Unauthorized" }, status: :unauthorized
-        end
+        # if user
+        #     user.update(avatar: params[:avatar], bio: params[:bio])
+        #     render json: user
+        # else
+        #     render json: { error: "Unauthorized" }, status: :unauthorized
+        # end
         # user = User.find_by(id: params[:id])
 
         # render json: user
     end 
+
+    def show
+        user = User.find_by(id: params[:id])
+
+        render json: user
+    end 
+
 
 
     def fake 
