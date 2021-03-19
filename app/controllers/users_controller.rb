@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     def token_show 
 
         # @current_user.update(email: params[:email], bio: params[:bio])
-        render json: @current_user
+        render json: @current_user  
 
         # user = AuthorizeRequest.new(request.headers).user
         
