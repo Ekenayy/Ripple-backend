@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/created_challenges/:user_id', to: 'challenges#created_challenges'
   get '/my_user_challenges/:user_id', to: 'user_challenges#my_user_challenges'
   get '/challenge_reviews/:challenge_id', to: 'reviews#challenge_reviews'
-  get '/test_show', to: 'users#test_show'
+  get '/token_show', to: 'users#token_show'
 
   patch 'users/:id', to: 'users#update'
 

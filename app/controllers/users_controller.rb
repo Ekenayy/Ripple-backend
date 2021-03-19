@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-    before_action :authenticate, only: [:test_show]
+    before_action :authenticate, only: [:token_show]
 
-    def test_show 
+    def token_show 
 
-        @current_user.update(email: params[:email], bio: params[:bio])
+        # @current_user.update(email: params[:email], bio: params[:bio])
         render json: @current_user
 
         # user = AuthorizeRequest.new(request.headers).user
