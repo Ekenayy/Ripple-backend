@@ -44,3 +44,5 @@ gem 'active_model_serializers'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 gem "jwt", "~> 2.2"
+
+gem 'dotenv-rails', groups: [:development, :test]
