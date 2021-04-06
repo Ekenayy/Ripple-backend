@@ -6,6 +6,8 @@ class Challenge < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :user_challenges, dependent: :destroy
   has_many :reviews, dependent: :destroy
+
+  validates :photo_url, :name, :genre, presence: true
   
   def my_challenge_takers
     my_user_challenges = UserChallenge.all.where(challenge_id: self.id)
