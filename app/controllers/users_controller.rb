@@ -57,17 +57,6 @@ class UsersController < ApplicationController
         
     end 
 
-    def login 
-        user = User.all.find_by(email: params[:email])
-
-        if user
-            render json: user
-        else 
-            render json: {errors: "The email or password you provided doesn't match our records"}
-        end 
-        
-    end 
-
     private
 
     def user_params
